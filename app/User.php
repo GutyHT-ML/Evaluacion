@@ -41,4 +41,8 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\TokenApp');
     }
+    public function files()
+    {
+        return $this->hasMany('App\File');
+    }
 }

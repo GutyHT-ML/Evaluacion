@@ -21,5 +21,6 @@ Route::post('signin', 'UserController@signIn');
 Route::post('login', 'UserController@logIn');
 Route::get('aber', 'UserController@checkConnection');
 Route::get('testNow', 'FileController@now');
-Route::post('store', 'FileController@storeFile')->middleware('auth:sanctum');
+Route::post('store/file', 'FileController@storeFile')->middleware('auth:sanctum');
 Route::get('ver/archivo', 'FileController@getFile')->middleware('auth:sanctum');
+Route::get('download/file', 'FileController@downloadFile')->middleware('auth:sanctum');
