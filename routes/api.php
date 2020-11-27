@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+Route::post('signin', 'UserController@signIn');
+Route::post('login', 'UserController@logIn');
+Route::get('aber', 'UserController@checkConnection');
+Route::get('testNow', 'FileController@now');
+Route::post('store', 'FileController@storeFile')->middleware('auth:sanctum');
+Route::get('ver/archivo', 'FileController@getFile')->middleware('auth:sanctum');
